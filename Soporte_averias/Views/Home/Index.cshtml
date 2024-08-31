@@ -1,0 +1,50 @@
+﻿@{
+	ViewBag.Title = "Soporte de Averías - Sitec Seguridad";
+
+}
+
+<main>
+	<section class="jumbotron text-center">
+		<div class="container">
+			<img src="~/Images/logo-sitec-seguridad.png" />
+			<h1 class="titulo_detalles">Bienvenido al soporte de averías de Sitec Seguridad</h1>
+			<p class="lead titulo_informacion">Tu aliado confiable en soluciones avanzadas de seguridad. Estamos aquí para ayudarte con cualquier incidencia.</p>
+			<a href="https://www.sitecseguridad.com/" class="btn btn-dark btn-lg">Visitar página &raquo;</a>
+		</div>
+	</section>
+	<br />
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card mb-4">
+					<div class="card-body">
+						<h2 class="card-title">Soporte de averías</h2>
+						<p class="card-text">Utiliza nuestra página para identificar, registrar, priorizar y resolver eficientemente los incidentes reportados. La sección 'Documentación' contiene información relevante para su funcionamiento.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card mb-4">
+					<div class="card-body">
+						<h2 class="card-title">Conócenos</h2>
+						<p class="card-text">Descubre más sobre nosotros con el botón que se encuentra debajo.</p>
+						<a href="@Url.Action("About", "Home")" class="btn btn_about btn-secondary">
+							<i class="fa fa-users"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card mb-4">
+					<div class="card-body">
+						<h2 class="card-title">Contáctanos</h2>
+						<p class="card-text">¿Necesitas ayuda? Estamos aquí para atenderte. Para más información, haz clic en el botón debajo.</p>
+						<a href="@Url.Action("Contact", "Home")" class="btn btn_contact btn-secondary">
+							<i class="fa-solid fa-phone"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

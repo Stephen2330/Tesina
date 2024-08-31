@@ -1,0 +1,118 @@
+﻿@model Soporte_averias.Models.TBL_Usuario
+
+@{
+	ViewBag.Title = "Nuevo usuario";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="barlow-regular barlow-semibold">@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+<div class="custom-card">
+		<h5 class="custom-card-title">
+			Usuario
+		</h5>
+	<div class="card-body">
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		<div class="form-group">
+			<i class="fa-brands fa-solid fa-critical-role"></i>
+			@Html.LabelFor(model => model.TN_IdRol, "Rol", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+			<div class="col-md-10">
+				
+				@Html.DropDownList("TN_IdRol", null,  htmlAttributes: new { @class = "form-control", @required=true })
+				<span class="text-danger">Nota: es importante seleccionar un rol diferente al de 'Seleccione rol' </span>
+				@Html.ValidationMessageFor(model => model.TN_IdRol, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<div class="form-group">
+			<i class="fa-solid fa-id-card-clip"></i>
+			@Html.LabelFor(model => model.TN_Cedula, "Cédula", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TN_Cedula, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba cédula (sólo dígitos)" } })
+				@Html.ValidationMessageFor(model => model.TN_Cedula, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<div class="form-group">
+			<i class="fa-solid fa-circle-user"></i>
+
+			@Html.LabelFor(model => model.TC_Nombre, "Nombre", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_Nombre, new{ htmlAttributes = new { @class = "form-control", @placeholder = "Escriba nombre" } })
+				@Html.ValidationMessageFor(model => model.TC_Nombre, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<div class="form-group">
+			<i class="fa-solid fa-circle-user"></i>
+
+			@Html.LabelFor(model => model.TC_PrimerApellido, "Primer apellido", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_PrimerApellido, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba primer apellido" } })
+				@Html.ValidationMessageFor(model => model.TC_PrimerApellido, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<div class="form-group">
+			<i class="fa-solid fa-circle-user"></i>
+
+			@Html.LabelFor(model => model.TC_SegundoApellido, "Segundo apellido", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_SegundoApellido, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba segundo apellido" } })
+				@Html.ValidationMessageFor(model => model.TC_SegundoApellido, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<div class="form-group">
+			<i class="fa-solid fa-envelope"></i>
+			@Html.LabelFor(model => model.TC_Correo, "Correo", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_Correo, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba correo" } })
+				@Html.ValidationMessageFor(model => model.TC_Correo, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<div class="form-group">
+			<i class="fa-solid fa-phone"></i>
+			@Html.LabelFor(model => model.TN_Telefono, "Teléfono", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TN_Telefono, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba teléfono (sólo dígitos)" } })
+				@Html.ValidationMessageFor(model => model.TN_Telefono, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<div class="form-group">
+			<i class="fa-solid fa-key"></i>
+			@Html.LabelFor(model => model.TC_Clave, "Contraseña", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_Clave, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba contraseña", @type = "password" } })
+				@Html.ValidationMessageFor(model => model.TC_Clave, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<button type="submit" class="btn btn-secondary btn_add">
+					<i class="fa fa-plus"></i>
+
+				</button>
+			</div>
+		</div>
+
+	</div>
+	</div>
+	}
+
+
+
+
+	<div>
+		<a class="btn_back btn btn-secondary btn-separator" href="@Url.Action("Index", "Usuario")">
+			<i class="fa fa-undo" aria-hidden="true"></i>
+
+
+		</a>
+	</div>
+
+	@section Scripts {
+		@Scripts.Render("~/bundles/jqueryval")
+	}

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Estadísticas";
+    Layout = "~/Views/Shared/_Layout_Empleado.cshtml";
+}
+
+<h2 class="barlow-regular barlow-semibold">@ViewBag.Title</h2>
+
+<iframe title="Gráficos_Tesina_PBi_vF" width="1200" height="550" src="https://app.powerbi.com/view?r=eyJrIjoiZjAxNTcyOTMtNjQ2Yi00MmM1LWFmMjMtZmQ5ODcwOWJjZWQ1IiwidCI6IjM5NDQ0YzM3LTE4N2UtNDkwNC1hMTNkLWNkZWViMDM2MDBjNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+
+<div>
+	<a class="btn_back btn btn-secondary" href="@Url.Action("Index", "Home")">
+		<i class="fa fa-undo" aria-hidden="true"></i>
+
+
+	</a>
+</div>

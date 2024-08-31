@@ -1,0 +1,125 @@
+﻿@model Soporte_averias.Models.TBL_Caso
+
+
+@{
+	ViewBag.Title = "Detalles caso";
+	Layout = "~/Views/Shared/_Layout_Empleado.cshtml";
+}
+
+<h2 class="barlow-regular barlow-semibold">@ViewBag.Title</h2>
+
+<div class="custom-card">
+	<h5 class="custom-card-header">
+		Caso
+	</h5>
+	<div class="card-body">
+
+		<dl class="dl-horizontal titulo_dl">
+
+			<dt>
+				<i class="fa-solid fa-calendar-days"></i>
+				Fecha creación de caso
+			</dt>
+
+
+			<dd>
+				@Html.DisplayFor(model => model.TD_FechaCreacion)
+			</dd>
+
+
+
+
+			<dt>
+				<i class="fa-solid fa-city"></i>
+
+				Municipalidad
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TBL_Municipalidad.TC_Nombre)
+			</dd>
+
+			<dt>
+				<i class="fa-solid fa-circle-user"></i>
+
+				Cliente
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TBL_Cliente.TC_Nombre)
+			</dd>
+			<dt>
+				<i class="fa-solid fa-boxes-stacked"></i>
+
+				Producto
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TBL_Producto.TC_Nombre)
+			</dd>
+
+
+			<dt>
+				<i class="fa-solid fa-note-sticky"></i>
+
+				Descripción de caso
+			</dt>
+			<dd>
+				@Html.DisplayFor(model => model.TBL_DescripcionCaso.TC_Descripcion)
+			</dd>
+
+			<dt>
+				<i class="fa-solid fa-bell"></i>
+
+				Prioridad de caso
+			</dt>
+			<dd>
+				@Html.DisplayFor(model => model.TBL_PrioridadCaso.TC_Nombre)
+			</dd>
+			<dt>
+				<i class="fa-solid fa-bars-progress"></i>
+
+				Estado de caso
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TBL_EstadoCaso.TC_Nombre)
+			</dd>
+			<dt>
+				<i class="fa-solid fa-user"></i>
+
+				Quien reporta el caso
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TBL_Usuario.TC_Nombre) @Html.DisplayFor(model => model.TBL_Usuario.TC_PrimerApellido)
+			</dd>
+
+			<dt>
+				<i class="fa-solid fa-calendar-days"></i>
+				Fecha cierre de caso
+			</dt>
+
+
+			<dd>@if (Model.TD_FechaCierre.HasValue)
+			{
+				@Html.DisplayFor(model => model.TD_FechaCierre)
+			}
+			else
+			{
+				<span>Caso resolviéndose</span>
+			}
+			</dd>
+
+		</dl>
+</div>
+</div>
+<div>
+
+	
+
+</div>
+<a class="btn btn-secondary btn_back" href="@Url.Action("Index", "Caso")">
+	<i class="fa-solid fa-undo" aria-hidden="true"></i>
+</a>
+

@@ -1,0 +1,114 @@
+﻿body.inicio_sesion {
+	background-color: dimgray;
+	color: #fff;
+	font-family: Helvetica, sans-serif;
+}
+
+.btn_clear {
+	border-radius: 7px;
+	font-size: 18px;
+	padding: 15px 30px;
+	background-color: #c82333; /* Color elegante para el botón de limpiar */
+	border-color: #9a1622; /* Color del borde */
+	color: #fff; /* Color del texto */
+}
+
+	.btn_clear:hover {
+		background-color: #dc3545; 
+		/* Cambia el color al pasar el mouse */
+		border-color: #9a1622;
+	}
+
+
+body.registro {
+	background-color: dimgray;
+	color: #fff;
+	font-family: Helvetica, sans-serif;
+}
+
+.container {
+	width: 300px;
+	margin: 0 auto;
+	padding-top: 100px;
+}
+
+.card {
+	background-color: #333; /* Cambio el color de fondo del card a negro */
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	color: white; /* Texto blanco dentro del card */
+}
+
+.card-title {
+	font-size: 24px;
+	text-align: center;
+	color: white; /* Color del título blanco */
+	margin-bottom: 20px; /* Agregué un poco de espacio inferior */
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-control {
+	width: calc(100% - 20px); /* Reducir el ancho para dejar espacio a la izquierda */
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #212529; /* Color de fondo para los inputs */
+	color: white; /* Texto blanco en los inputs */
+}
+
+/* Ajuste para el tamaño del botón en pantallas pequeñas */
+@media screen and (max-width: 400px) {
+	.form-control {
+		width: calc(100% - 16px); /* Reducir aún más el ancho en pantallas pequeñas */
+	}
+}
+
+.label-left {
+	text-align: left;
+	display: block;
+	margin-bottom: 5px; /* Espacio entre la etiqueta y el input */
+	color: white; /* Texto de las etiquetas en blanco */
+}
+
+.btn {
+	width: 100%;
+	padding: 15px 0; /* Espacio interno igual para ambos botones */
+	margin-top: 10px;
+	border: none;
+	border-radius: 7px; /* Borde redondeado para ambos botones */
+	cursor: pointer;
+	font-size: 18px;
+	display: block;
+	text-align: center;
+}
+
+.btn_inicio_sesion {
+	background-color: #218838; /* Verde */
+	color: #fff; /* Color del texto */
+	border: 2px solid #087220; /* Borde del botón */
+}
+
+.btn_inicio_sesion:hover {
+	background-color: #28a745; /* Verde oscuro al pasar el mouse */
+}
+
+.btn_add {
+	background-color: #0056b3; /* Azul */
+	color: #fff; /* Color del texto */
+	border: 2px solid #063466; /* Borde del botón */
+}
+
+	.btn_add:hover {
+		background-color: #007bff;
+		 /* Azul oscuro al pasar el mouse */
+	}
+
+/* Cambio el color del placeholder */
+.form-control::placeholder {
+	color: white;
+}

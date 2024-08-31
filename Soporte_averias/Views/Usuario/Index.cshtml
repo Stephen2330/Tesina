@@ -1,0 +1,237 @@
+﻿@model IEnumerable<Soporte_averias.Models.TBL_Usuario>
+
+@{
+	ViewBag.Title = "Lista de usuarios";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.CurrentFilter = ViewBag.CurrentFilter ?? "";
+}
+
+<h2 class="barlow-regular barlow-semibold">@ViewBag.Title</h2>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6">
+			<a class="btn btn-secondary btn_add" href="@Url.Action("Create", "Usuario")">
+				<i class="fa-solid fa-plus">
+
+				</i>
+			</a>
+		</div>
+		<div class="col-lg-6">
+			<div class="form-group" style="float:right;">
+				@using (Html.BeginForm("Index", "Usuario", FormMethod.Get))
+				{
+					<div class="form-group roboto-black ">
+						<div class="d-flex align-items-center">
+							<label for="searchText" class="mr-2"></label>
+							@Html.TextBox("searchText", ViewBag.CurrentFilter as string, new { @class = "form-control mr-2 btn-separator", @required = true, @placeholder = "Filtrar por nombre" })
+							<button type="submit" class="btn btn-secondary btn_search btn-separator">
+								<i class="fa-solid fa-search"></i>
+							</button>
+							<a href="@Url.Action("Index", "Usuario")" class="btn btn-secondary btn_clean ">
+								<i class="fa-solid fa-eraser"></i>
+							</a>
+						</div>
+					</div>
+				}
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<br />
+
+
+<div class="table-responsive">
+	<div class="cuadro_tabla">
+		<table class="table table-striped letra_tabla table-bordered table-hover">
+			<tr class="titulo_encabezado_tabla table-dark">
+				<th>
+					<i class="fa-solid fa-id-card-clip"></i>
+					Cédula
+				</th>
+				<th>
+					<i class="fa-solid fa-circle-user"></i>
+
+					Nombre
+				</th>
+				<th>
+					<i class="fa-solid fa-circle-user"></i>
+
+					Primer apellido
+				</th>
+				<th>
+					<i class="fa-solid fa-circle-user"></i>
+
+					Segundo apellido
+				</th>
+				<th>
+					<i class="fa-solid fa-envelope"></i>
+
+					Correo
+				</th>
+				<th>
+					<i class="fa-solid fa-phone"></i>
+
+					Teléfono
+				</th>
+
+				<th>
+					<i class="fa-brands fa-critical-role"></i>
+					Rol
+				</th>
+				<th colspan="2">
+					<i class="fa fa-cogs"></i>
+					Operaciones
+				</th>
+			</tr>
+
+			<tbody class="table-light table-striped">
+
+
+				@foreach (var item in Model)
+				{
+					<tr class="datos_tabla">
+						<td>
+							@Html.DisplayFor(modelItem => item.TN_Cedula)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.TC_Nombre)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.TC_PrimerApellido)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.TC_SegundoApellido)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.TC_Correo)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.TN_Telefono)
+						</td>
+
+						<td>
+							@Html.DisplayFor(modelItem => item.TBL_Rol.TC_Nombre)
+						</td>
+						<td>
+							<div class="btn-group">
+								<a class="btn btn-secondary btn_edit btn-separator" href="@Url.Action("Edit","Usuario", new { id = item.TN_IdUsuario })">
+									<i class="fa-solid fa-pen-to-square"></i>
+								</a>
+								<a class="btn btn-secondary btn_details" href="@Url.Action("Details","Usuario", new { id = item.TN_IdUsuario })">
+									<i class="fa-solid fa-circle-info"></i>
+								</a>
+
+							</div>
+						</td>
+					</tr>
+
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+<a class="btn btn-secondary btn_PDF" href="@Url.Action("ExportToPdf", "Usuario")"><span><i class="fa-solid fa-file-pdf"></i> Exportar</span></a>
+<a class="btn btn-secondary btn_Excel" href="@Url.Action("ExportToExcel", "Usuario", new { searchText = ViewBag.CurrentFilter })"><span><i class="fa-solid fa-file-excel"></i> Exportar</span></a>
+
+
+
+@if (ViewBag.CurrentFilter != null && Model.Any())
+{
+
+}
+
+@if (Model.Any())
+{
+	<div class="current-page-info datos_paginacion">
+		Página @ViewBag.PageNumber de @ViewBag.totalPages
+	</div>
+}
+
+<div class="pagination-container datos_paginacion text-center">
+	@if (Model.Any())
+	{
+		<ul class="pagination justify-content-center">
+			@if (ViewBag.PageNumber > 1)
+			{
+				if (ViewBag.CurrentFilter != null)
+				{
+					<li>
+						<a class="btn btn-secondary btn_angle_left" href="@Url.Action("Index", new { page = ViewBag.PageNumber - 1, searchText = ViewBag.CurrentFilter })">
+							<i class="fa-solid fa-angle-left"></i>
+						</a>
+					</li>
+				}
+				else
+				{
+					<li>
+						<a class="btn btn-secondary btn_angle_left" href="@Url.Action("Index", new { page = ViewBag.PageNumber - 1 })">
+							<i class="fa-solid fa-angle-left"></i>
+						</a>
+					</li>
+				}
+			}
+			else
+			{
+				if (ViewBag.CurrentFilter != null)
+				{
+					<li>
+						<a class="btn btn-secondary btn_angle_left" href="@Url.Action("Index", new { page = ViewBag.totalPages, searchText = ViewBag.CurrentFilter })">
+							<i class="fa-solid fa-angle-left"></i>
+
+						</a>
+					</li>
+				}
+				else
+				{
+					<li>
+						<a class="btn btn-secondary btn_angle_left" href="@Url.Action("Index", new { page = ViewBag.totalPages })">
+							<i class="fa-solid fa-angle-left"></i>
+						</a>
+					</li>
+				}
+			}
+
+			<li>
+				<a class="btn btn-secondary btn_home" href="@Url.Action("Index", new { page = 1, searchText = ViewBag.CurrentFilter })">
+					<i class="fas fa-home"></i>
+				</a>
+			</li>
+
+			@if (ViewBag.PageNumber < ViewBag.totalPages)
+			{
+				<li>
+					<a class="btn btn-secondary btn_angle_right" href="@Url.Action("Index", new { page = ViewBag.PageNumber + 1, searchText = ViewBag.CurrentFilter })">
+						<i class="fa-solid fa-angle-right"></i>
+					</a>
+				</li>
+			}
+			else
+			{
+				<li>
+					<a class="btn btn-secondary btn_angle_right" href="@Url.Action("Index", new { page = 1, searchText = ViewBag.CurrentFilter })">
+						<i class="fa-solid fa-angle-right"></i>
+					</a>
+				</li>
+			}
+		</ul>
+	}
+</div>
+
+
+<br />
+
+
+<div>
+	<a class="btn_back btn btn-secondary" href="@Url.Action("Index", "Home")">
+		<i class="fa fa-undo" aria-hidden="true"></i>
+
+
+	</a>
+</div>
+
+

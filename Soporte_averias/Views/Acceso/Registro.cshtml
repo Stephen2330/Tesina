@@ -1,0 +1,80 @@
+﻿@model Soporte_averias.Models.Usuarios
+
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Registro de empleados - Sitec Seguridad</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/login_prueba.css" rel="stylesheet" />
+</head>
+<body class="registro">
+	<div class="wrapper">
+		<div id="formContent">
+			<div class="card">
+				<div class="fadeIn first">
+					<br />
+					<img src="~/Images/logo-sitec-seguridad.png" />
+					<h1 class="titulo_login">Registro empleados</h1>
+				</div>
+
+				@using (Html.BeginForm("Registro", "Acceso", FormMethod.Post, new { @class = "form-horizontal form-signin" }))
+				{
+					@Html.AntiForgeryToken()
+
+					<div class="form-group">
+						<input type="text" class="form-control input-cedula fadeIn second input-long" id="TN_Cedula" name="TN_Cedula" placeholder="Ingrese cédula (sólo dígitos)" required /><br />
+						@Html.ValidationMessageFor(model => model.TN_Cedula, "El número de cédula requiere 9 dígitos", new { @class = "text-danger" })
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control input-nombre fadeIn second input-long" id="TC_Nombre" name="TC_Nombre" placeholder="Ingrese nombre" required />
+						@Html.ValidationMessageFor(model => model.TC_Nombre, "", new { @class = "text-danger" })
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control input-primer-apellido fadeIn second input-long" id="TC_PrimerApellido" name="TC_PrimerApellido" placeholder="Ingrese primer apellido" required />
+						@Html.ValidationMessageFor(model => model.TC_PrimerApellido, "", new { @class = "text-danger" })
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control input-segundo-apellido fadeIn second input-long" id="TC_SegundoApellido" name="TC_SegundoApellido" placeholder="Ingrese segundo apellido" required />
+						@Html.ValidationMessageFor(model => model.TC_SegundoApellido, "", new { @class = "text-danger" })
+					</div>
+					<div class="form-group">
+						<input type="email" class="form-control input-correo fadeIn second input-long" id="TC_Correo" name="TC_Correo" placeholder="Ingrese correo" required />
+						@Html.ValidationMessageFor(model => model.TC_Correo, "", new { @class = "text-danger" })
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control input-telefono fadeIn second input-long" id="TN_Telefono" name="TN_Telefono" placeholder="Ingrese teléfono (sólo dígitos)" required />
+						<br />
+						@Html.ValidationMessageFor(model => model.TN_Telefono, "El número de teléfono requiere 8 dígitos", new { @class = "text-danger" })
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control input-clave fadeIn second input-long" id="TC_Clave" name="TC_Clave" placeholder="Ingrese contraseña" required />
+						<br />
+						@Html.ValidationMessageFor(model => model.TC_Clave, "La contraseña debe tener al mínimo 8 caracteres, incluyendo mayúsculas, minúsculas y un número.", new { @class = "text-danger" })
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control input-clave fadeIn second input-long" id="confirmar_clave" name="confirmar_clave" placeholder="Confirme contraseña" required />
+						@Html.ValidationMessageFor(model => model.confirmar_clave, "", new { @class = "text-danger" })
+					</div>
+
+					<button type="submit" class="btn btn_add fadeIn fourth">Registrar</button>
+
+				<a class="btn btn_inicio_sesion btn-secondary fadeIn fifth" href="@Url.Action("Inicio_Sesion","Acceso")"> Iniciar sesión</a>
+				<button type="reset" class="btn btn-secondary fadeIn sixth btn_clear">
+					Limpiar
+				</button>
+				}
+
+
+			</div>
+		</div>
+	</div>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

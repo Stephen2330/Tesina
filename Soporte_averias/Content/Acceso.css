@@ -1,0 +1,235 @@
+﻿﻿.wrapper {
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+
+
+.item_drop {
+	color: ghostwhite;
+}
+
+
+.registro {
+	font-family: Barlow;
+	background-color: dimgray;
+}
+
+.inicio_sesion {
+	font-family: Barlow;
+	background-color: dimgray;
+}
+
+
+
+.form-signin {
+	max-width: 420px;
+	padding: 30px 38px 66px;
+	margin: 0 auto;
+	background-color: #eee;
+	border: 3px dotted rgba(0,0,0,0.1);
+}
+
+
+
+.form-signin-heading {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+
+
+.form-control {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+}
+
+.letra_form {
+	color: black;
+}
+
+.fondo_form {
+	background-color: orangered;
+	margin-bottom: 30px;
+}
+
+input[type="text"] {
+	margin-bottom: 0px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+
+
+input[type="password"] {
+	margin-bottom: 0px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+
+
+.colorgraph {
+	height: 7px;
+	border-top: 0;
+	background: #c4e17f;
+	border-radius: 5px;
+	background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+	background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+	background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+	background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+
+body {
+	background-color: #f5f5f5;
+	font-family: Arial, sans-serif;
+}
+
+.container {
+	margin-top: 20px;
+	text-align:center;
+}
+
+.form-container {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom {
+	background-color: #343a40;
+	color: #fff;
+	border: none;
+}
+
+	.btn-custom:hover {
+		background-color: #1e2124;
+	}
+
+.error-message {
+	color: red;
+	margin-top: 10px;
+}
+
+.card {
+	margin: auto;
+	width: 42%; /* Ancho del formulario */
+	background-color: lightgray; /* Color de fondo del formulario */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+
+}
+.card-body {
+	padding: 30px;
+}
+
+.card-title {
+	color: #333333; /* Color del título */
+}
+
+form-group {
+	margin-bottom: 20px;
+	text-align: left; /* Alinear etiquetas del formulario */
+}
+
+ .form-control {
+            border-radius: 7px; /* Borde redondeado */
+            width: 50%; /* Ancho completo */
+            padding: 10px; /* Espaciado interno */
+            box-sizing: border-box; /* Tamaño total incluyendo el relleno */
+        }
+
+.btn_add {
+	border-radius: 7px;
+	background-color: #007bff; 
+	color: #ffffff; 
+	border:2px solid;
+	border-color: #063466; 
+	font-size:18px;
+	padding: 15px 30px;
+}
+
+	.btn_add:hover {
+		background-color: #0056b3; /* Color del botón al pasar el ratón */
+	}
+
+.btn_clear {
+	border-radius: 7px;
+	font-size: 18px;
+	padding: 15px 30px;
+	background-color: #dc3545; /* Color elegante para el botón de limpiar */
+	border-color: #9a1622; /* Color del borde */
+	color: #fff; /* Color del texto */
+}
+
+	.btn_clear:hover {
+		background-color: #c82333; /* Cambia el color al pasar el mouse */
+		border-color: #9a1622;
+	}
+
+.btn_inicio_sesion {
+	font-size: 18px;
+	background-color: #28a745; /* Verde */
+	color: #fff; /* Color del texto */
+	border: 2px solid #087220; /* Borde del botón */
+	padding: 15px 30px; /* Espacio interno */
+	text-decoration: none; /* Eliminar subrayado del enlace */
+	border-radius: 7px; /* Borde redondeado */
+	display: inline-block; /* Mostrar como bloque en línea */
+}
+
+	.btn_inicio_sesion:hover {
+		background-color: #218838; /* Verde oscuro al pasar el mouse */
+	}
+
+
+.form-signin {
+	background-color: #000000; /* Fondo negro */
+	color: #ffffff; /* Texto blanco */
+	font-family: Arial, Helvetica, sans-serif; /* Estilo de fuente */
+	border-radius: 0.25rem; /* Ajusta el radio del borde, si es necesario */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave alrededor del formulario */
+	padding: 20px; /* Ajusta el relleno según sea necesario */
+}
+
+	.form-signin label {
+		color: #ffffff; /* Texto blanco para las etiquetas */
+	}
+
+	.form-signin input[type="text"],
+	.form-signin input[type="password"]{
+		color: #000000; /* Texto negro para los campos de entrada y botones */
+		background-color: #ffffff; /* Fondo blanco para los campos de entrada y botones */
+		border: none; /* Elimina los bordes de los campos de entrada y botones */
+		border-radius: 0.25rem; /* Ajusta el radio del borde, si es necesario */
+		padding: 10px; /* Ajusta el relleno según sea necesario */
+		font-size: 16px; /* Ajusta el tamaño de fuente según sea necesario */
+		transition: all 0.3s ease; /* Agrega transiciones suaves */
+	}
+
+
+
+		.form-signin input[type="text"]:focus,
+		.form-signin input[type="password"]:focus,
+		.form-signin button:focus {
+			outline: none; /* Elimina el contorno de enfoque */
+		}
+
+
+
+	.form-signin a {
+		color: #ffffff; /* Color del texto de los enlaces */
+	}
+
+		.form-signin a:hover {
+			text-decoration: underline; /* Subraya los enlaces al pasar el cursor */
+		}
+
+
+.input-long {
+width:100%;
+
+}
+

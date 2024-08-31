@@ -1,0 +1,38 @@
+﻿@{
+	ViewBag.Title = "Soporte de averías - Sitec Seguridad";
+
+	Layout = "~/Views/Shared/_Layout_Empleado.cshtml";
+
+}
+<main aria-labelledby="title">
+	<div class="custom-card-contact">
+		<h2 class="custom-card-header" id="title">@ViewBag.Title - Sitec Seguridad</h2>
+
+		<h3>@ViewBag.Message</h3>
+
+		<address>
+			Nos ubicamos en: San Juan de Tibás. De Pizza Hut 50 Norte, 200 Oeste y 75 Sur.<br />
+
+			<i class="fa-xl fa-solid fa-phone"></i>
+			+506 2296-0505
+			<br />
+			<br />
+			<i class="fa-2xl fa-brands fa-whatsapp"></i>
+			+506 8479-4118
+		</address>
+
+		<address>
+			<strong>Ventas:</strong>
+			<a class="link-light" href="mailto:ventas@sitecseguridad.com">ventas@sitecseguridad.com</a>
+		</address>
+	</div>
+</main>
+
+<div>
+	<a class="btn_back btn btn-secondary btn-separator" href="@Url.Action("Index", "Home_Empleado")">
+		<i class="fa fa-undo" aria-hidden="true"></i>
+
+
+	</a>
+</div>
+

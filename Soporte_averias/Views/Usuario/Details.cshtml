@@ -1,0 +1,91 @@
+﻿@model Soporte_averias.Models.TBL_Usuario
+
+@{
+	ViewBag.Title = "Detalles usuario";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="barlow-regular barlow-semibold">@ViewBag.Title</h2>
+
+<div class="custom-card">
+		<h5 class="custom-card-header">Usuario</h5>
+	<div class="card-body">
+
+		<dl class="dl-horizontal titulo_dl">
+			<dt>
+				<i class="fa-solid fa-id-card-clip"></i>
+				Cédula
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TN_Cedula)
+			</dd>
+			<dt>
+				<i class="fa-solid fa-circle-user"></i>
+				Nombre
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TC_Nombre)
+			</dd>
+			<dt>
+				<i class="fa-solid fa-circle-user"></i>
+
+				Primer apellido
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TC_PrimerApellido)
+			</dd>
+			<dt>
+				<i class="fa-solid fa-circle-user"></i>
+
+				Segundo apellido
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TC_SegundoApellido)
+			</dd>
+			<dt>
+				<i class="fa-solid fa-envelope"></i>
+
+				Correo
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TC_Correo)
+			</dd>
+			<dt>
+				<i class="fa-solid fa-phone"></i>
+
+				Teléfono
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TN_Telefono)
+			</dd>
+
+			<dt>
+				<i class="fa-brands fa-critical-role"></i>
+
+				Rol
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TBL_Rol.TC_Nombre)
+			</dd>
+
+		</dl>
+	</div>
+	</div>
+	<div>
+
+		<a class="btn btn-secondary btn_edit btn-separator" href="@Url.Action("Edit","Usuario", new { id = Model.TN_IdUsuario })">
+			<i class="fa-solid fa-pen-to-square"></i>
+		</a>
+
+
+	</div>
+	<a class="btn btn-secondary btn_back" href="@Url.Action("Index", "Usuario")">
+		<i class="fa-solid fa-undo" aria-hidden="true"></i>
+	</a>

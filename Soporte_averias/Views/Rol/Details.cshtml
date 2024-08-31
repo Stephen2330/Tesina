@@ -1,0 +1,48 @@
+﻿@model Soporte_averias.Models.TBL_Rol
+
+@{
+	ViewBag.Title = "Detalles rol";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="barlow-regular barlow-semibold">@ViewBag.Title</h2>
+
+<div class="custom-card">
+		<h5 class="custom-card-header">Rol</h5>
+	<div class="card-body">
+
+		<dl class="dl-horizontal titulo_dl">
+			<dt>
+				<i class="fa-solid fa-circle-user"></i>
+
+				Nombre
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TC_Nombre)
+			</dd>
+			<br />
+			<dt>
+				<i class="fa-solid fa-note-sticky"></i>
+
+				Descripción
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TC_Descripcion)
+			</dd>
+
+		</dl>
+	</div>
+</div>
+<div>
+
+	<a class="btn btn-secondary btn_edit btn-separator" href="@Url.Action("Edit","Rol", new { id = Model.TN_IdRol })">
+		<i class="fa-solid fa-pen-to-square"></i>
+	</a>
+
+
+</div>
+<a class="btn btn-secondary btn_back" href="@Url.Action("Index", "Rol")">
+	<i class="fa-solid fa-undo" aria-hidden="true"></i>
+</a>

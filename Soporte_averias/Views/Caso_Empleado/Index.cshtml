@@ -1,0 +1,269 @@
+﻿@model IEnumerable<Soporte_averias.Models.TBL_Caso>
+
+@{
+	ViewBag.Title = "Lista de casos";
+	Layout = "~/Views/Shared/_Layout_Empleado.cshtml";
+	ViewBag.CurrentFilter = ViewBag.CurrentFilter ?? "";
+}
+
+
+<h2 class="barlow-regular barlow-semibold">@ViewBag.Title</h2>
+<div class="container">
+	<div class="row">
+
+		<div class="col-lg-12">
+			<div class="form-group" style="float:right;">
+				@using (Html.BeginForm("Index", "Caso", FormMethod.Get))
+				{
+					<div class="form-group roboto-black">
+						<div class="d-flex align-items-center">
+							<label for="selectEstado" class="mr-2"></label>
+							@Html.DropDownList("selectEstado", ViewBag.Estados as SelectList, "Filtrar por estado", new { @class = "form-control mr-2 btn-separator", @required = true })
+							<button type="submit" class="btn btn-secondary btn_search btn-separator">
+								<i class="fa-solid fa-search"></i>
+							</button>
+							<a href="@Url.Action("Index", "Caso")" class="btn btn-secondary btn_clean">
+								<i class="fa-solid fa-eraser"></i>
+							</a>
+						</div>
+					</div>
+				}
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<br />
+
+<div class="table-responsive">
+	<div class="cuadro_tabla">
+		<table class="table table-striped letra_tabla table-bordered table-hover">
+			<tr class="titulo_encabezado_tabla table-dark">
+
+				<th>
+					<i class="fa-solid fa-calendar-days"></i>
+
+					Fecha creación de caso
+				</th>
+				<th>
+					<i class="fa-solid fa-user-tie"></i>
+					Empleado asignado
+				</th>
+				<th>
+					<i class="fa-solid fa-city"></i>
+					Municipalidad
+				</th>
+				<th>
+					<i class="fa-solid fa-circle-user"></i>
+					Cliente
+				</th>
+				<th>
+					<i class="fa-solid fa-boxes-stacked"></i>
+
+					Producto
+				</th>
+				<th>
+					<i class="fa-solid fa-note-sticky"></i>
+					Descripción de caso
+				</th>
+				<th>
+					<i class="fa-solid fa-bell"></i>
+					Prioridad de caso
+				</th>
+				<th>
+					<i class="fa-solid fa-bars-progress"></i>
+					Estado de caso
+				</th>
+
+				<th>
+					<i class="fa-solid fa-calendar-days"></i>
+					Fecha cierre de caso
+				</th>
+				<th colspan="2">
+					<i class="fa fa-cogs"></i>
+					Operaciones
+
+				</th>
+			</tr>
+
+
+			<tbody class="table-light table-striped">
+				@foreach (var item in Model)
+				{
+					<tr class="datos_tabla">
+
+						<td>
+							@Html.DisplayFor(modelItem => item.TD_FechaCreacion)
+						</td>
+
+						<td>
+							@Html.DisplayFor(modelItem => item.TBL_Usuario.TC_Nombre) @Html.DisplayFor(modelItem => item.TBL_Usuario.TC_PrimerApellido)
+						</td>
+
+
+						<td>
+							@Html.DisplayFor(modelItem => item.TBL_Municipalidad.TC_Nombre)
+						</td>
+
+						<td>
+							@Html.DisplayFor(modelItem => item.TBL_Cliente.TC_Nombre)
+						</td>
+
+						<td>
+							@Html.DisplayFor(modelItem => item.TBL_Producto.TC_Nombre)
+						</td>
+
+						<td>
+							@Html.DisplayFor(modelItem => item.TBL_DescripcionCaso.TC_Descripcion)
+						</td>
+
+						<td>
+							@Html.DisplayFor(modelItem => item.TBL_PrioridadCaso.TC_Nombre)
+						</td>
+
+						<td>
+							@Html.DisplayFor(modelItem => item.TBL_EstadoCaso.TC_Nombre)
+						</td>
+
+
+						<td>
+							@{
+								if (item.TD_FechaCierre.HasValue)
+								{
+									@Html.DisplayFor(modelitem => item.TD_FechaCierre)
+								}
+								else
+								{
+									<span>Caso resolviéndose</span>
+								}
+
+							}
+						</td>
+
+
+
+
+						<td>
+							<div class="btn-group">
+								
+								<a class="btn btn-secondary btn_details" href="@Url.Action("Details", "Caso", new { id = item.TN_IdCaso })">
+									<i class="fa-solid fa-circle-info"></i>
+								</a>
+
+							</div>
+						</td>
+					</tr>
+				}
+
+			</tbody>
+		</table>
+
+	</div>
+
+</div>
+
+
+
+<a class="btn btn-secondary btn_PDF" href="@Url.Action("ExportToPdf", "Caso")"><span><i class="fa-solid fa-file-pdf"></i> Exportar</span></a>
+<a class="btn btn-secondary btn_Excel" href="@Url.Action("ExportToExcel", "Caso", new { searchText = ViewBag.CurrentFilter })"><span><i class="fa-solid fa-file-excel"></i> Exportar</span></a>
+
+
+
+@if (ViewBag.CurrentFilter != null && Model.Any())
+{
+
+}
+
+@if (Model.Any())
+{
+	<div class="current-page-info datos_paginacion">
+		Página @ViewBag.PageNumber de @ViewBag.totalPages
+	</div>
+}
+
+<div class="pagination-container datos_paginacion text-center">
+	@if (Model.Any())
+	{
+		<ul class="pagination justify-content-center">
+			@if (ViewBag.PageNumber > 1)
+			{
+				if (ViewBag.CurrentFilter != null)
+				{
+					<li>
+						<a class="btn btn-secondary btn_angle_left" href="@Url.Action("Index", new { page = ViewBag.PageNumber - 1, searchText = ViewBag.CurrentFilter })">
+							<i class="fa-solid fa-angle-left"></i>
+						</a>
+					</li>
+				}
+				else
+				{
+					<li>
+						<a class="btn btn-secondary btn_angle_left" href="@Url.Action("Index", new { page = ViewBag.PageNumber - 1 })">
+							<i class="fa-solid fa-angle-left"></i>
+						</a>
+					</li>
+				}
+			}
+			else
+			{
+				if (ViewBag.CurrentFilter != null)
+				{
+					<li>
+						<a class="btn btn-secondary btn_angle_left" href="@Url.Action("Index", new { page = ViewBag.totalPages, searchText = ViewBag.CurrentFilter })">
+							<i class="fa-solid fa-angle-left"></i>
+
+						</a>
+					</li>
+				}
+				else
+				{
+					<li>
+						<a class="btn btn-secondary btn_angle_left" href="@Url.Action("Index", new { page = ViewBag.totalPages })">
+							<i class="fa-solid fa-angle-left"></i>
+						</a>
+					</li>
+				}
+			}
+
+			<li>
+				<a class="btn btn-secondary btn_home" href="@Url.Action("Index", new { page = 1, searchText = ViewBag.CurrentFilter })">
+					<i class="fas fa-home"></i>
+				</a>
+			</li>
+
+			@if (ViewBag.PageNumber < ViewBag.totalPages)
+			{
+				<li>
+					<a class="btn btn-secondary btn_angle_right" href="@Url.Action("Index", new { page = ViewBag.PageNumber + 1, searchText = ViewBag.CurrentFilter })">
+						<i class="fa-solid fa-angle-right"></i>
+					</a>
+				</li>
+			}
+			else
+			{
+				<li>
+					<a class="btn btn-secondary btn_angle_right" href="@Url.Action("Index", new { page = 1, searchText = ViewBag.CurrentFilter })">
+						<i class="fa-solid fa-angle-right"></i>
+					</a>
+				</li>
+			}
+		</ul>
+	}
+</div>
+
+
+<br />
+
+
+<div>
+	<a class="btn_back btn btn-secondary" href="@Url.Action("Index", "Home")">
+		<i class="fa fa-undo" aria-hidden="true"></i>
+
+
+	</a>
+</div>
+
+

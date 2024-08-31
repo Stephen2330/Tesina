@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SOPORTEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBL_Caso">
+    <Key>
+      <PropertyRef Name="TN_IdCaso" />
+    </Key>
+    <Property Name="TN_IdCaso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TN_IdMunicipalidad" Type="Int32" />
+    <Property Name="TN_IdCliente" Type="Int32" />
+    <Property Name="TN_IdProducto" Type="Int32" />
+    <Property Name="TN_IdDescripcionCaso" Type="Int32" />
+    <Property Name="TN_IdPrioridadCaso" Type="Int32" />
+    <Property Name="TN_IdEstadoCaso" Type="Int32" />
+    <Property Name="TN_IdUsuario" Type="Int32" />
+    <Property Name="TD_FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="TD_FechaCierre" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBL_Cliente" Relationship="Self.FK_TBL_Caso_TBL_Cliente" FromRole="TBL_Caso" ToRole="TBL_Cliente" />
+    <NavigationProperty Name="TBL_DescripcionCaso" Relationship="Self.FK_TBL_Caso_TBL_DescripcionCaso" FromRole="TBL_Caso" ToRole="TBL_DescripcionCaso" />
+    <NavigationProperty Name="TBL_EstadoCaso" Relationship="Self.FK_TBL_Caso_TBL_EstadoCaso" FromRole="TBL_Caso" ToRole="TBL_EstadoCaso" />
+    <NavigationProperty Name="TBL_Municipalidad" Relationship="Self.FK_TBL_Caso_TBL_Municipalidad" FromRole="TBL_Caso" ToRole="TBL_Municipalidad" />
+    <NavigationProperty Name="TBL_PrioridadCaso" Relationship="Self.FK_TBL_Caso_TBL_PrioridadCaso" FromRole="TBL_Caso" ToRole="TBL_PrioridadCaso" />
+    <NavigationProperty Name="TBL_Producto" Relationship="Self.FK_TBL_Caso_TBL_Producto" FromRole="TBL_Caso" ToRole="TBL_Producto" />
+    <NavigationProperty Name="TBL_Usuario" Relationship="Self.FK_TBL_Caso_TBL_Usuario" FromRole="TBL_Caso" ToRole="TBL_Usuario" />
+  </EntityType>
+  <EntityType Name="TBL_Cliente">
+    <Key>
+      <PropertyRef Name="TN_IdCliente" />
+    </Key>
+    <Property Name="TN_IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TC_Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Caso" Relationship="Self.FK_TBL_Caso_TBL_Cliente" FromRole="TBL_Cliente" ToRole="TBL_Caso" />
+  </EntityType>
+  <EntityType Name="TBL_DescripcionCaso">
+    <Key>
+      <PropertyRef Name="TN_IdDescripcionCaso" />
+    </Key>
+    <Property Name="TN_IdDescripcionCaso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TC_Observacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Caso" Relationship="Self.FK_TBL_Caso_TBL_DescripcionCaso" FromRole="TBL_DescripcionCaso" ToRole="TBL_Caso" />
+  </EntityType>
+  <EntityType Name="TBL_EstadoCaso">
+    <Key>
+      <PropertyRef Name="TN_IdEstadoCaso" />
+    </Key>
+    <Property Name="TN_IdEstadoCaso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TC_Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Caso" Relationship="Self.FK_TBL_Caso_TBL_EstadoCaso" FromRole="TBL_EstadoCaso" ToRole="TBL_Caso" />
+  </EntityType>
+  <EntityType Name="TBL_Municipalidad">
+    <Key>
+      <PropertyRef Name="TN_IdMunicipalidad" />
+    </Key>
+    <Property Name="TN_IdMunicipalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TC_Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Caso" Relationship="Self.FK_TBL_Caso_TBL_Municipalidad" FromRole="TBL_Municipalidad" ToRole="TBL_Caso" />
+  </EntityType>
+  <EntityType Name="TBL_PrioridadCaso">
+    <Key>
+      <PropertyRef Name="TN_IdPrioridadCaso" />
+    </Key>
+    <Property Name="TN_IdPrioridadCaso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TC_Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Caso" Relationship="Self.FK_TBL_Caso_TBL_PrioridadCaso" FromRole="TBL_PrioridadCaso" ToRole="TBL_Caso" />
+  </EntityType>
+  <EntityType Name="TBL_Producto">
+    <Key>
+      <PropertyRef Name="TN_IdProducto" />
+    </Key>
+    <Property Name="TN_IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TC_Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Caso" Relationship="Self.FK_TBL_Caso_TBL_Producto" FromRole="TBL_Producto" ToRole="TBL_Caso" />
+    <Property Name="TN_Cantidad_Inventario" Type="Int32" />
+    <Property Name="TN_Precio_Unitario" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="TBL_Rol">
+    <Key>
+      <PropertyRef Name="TN_IdRol" />
+    </Key>
+    <Property Name="TN_IdRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TC_Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Usuario" Relationship="Self.FK_TBL_Usuario_TBL_Rol" FromRole="TBL_Rol" ToRole="TBL_Usuario" />
+  </EntityType>
+  <EntityType Name="TBL_Usuario">
+    <Key>
+      <PropertyRef Name="TN_IdUsuario" />
+    </Key>
+    <Property Name="TN_IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TN_IdRol" Type="Int32" />
+    <Property Name="TN_Cedula" Type="Int32" />
+    <Property Name="TC_Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TC_PrimerApellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TC_SegundoApellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TC_Correo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TN_Telefono" Type="Int32" />
+    <Property Name="TC_Clave" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBL_Caso" Relationship="Self.FK_TBL_Caso_TBL_Usuario" FromRole="TBL_Usuario" ToRole="TBL_Caso" />
+    <NavigationProperty Name="TBL_Rol" Relationship="Self.FK_TBL_Usuario_TBL_Rol" FromRole="TBL_Usuario" ToRole="TBL_Rol" />
+  </EntityType>
+  <Association Name="FK_TBL_Caso_TBL_Cliente">
+    <End Role="TBL_Cliente" Type="Self.TBL_Cliente" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Cliente">
+        <PropertyRef Name="TN_IdCliente" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_DescripcionCaso">
+    <End Role="TBL_DescripcionCaso" Type="Self.TBL_DescripcionCaso" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_DescripcionCaso">
+        <PropertyRef Name="TN_IdDescripcionCaso" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdDescripcionCaso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_EstadoCaso">
+    <End Role="TBL_EstadoCaso" Type="Self.TBL_EstadoCaso" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_EstadoCaso">
+        <PropertyRef Name="TN_IdEstadoCaso" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdEstadoCaso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_Municipalidad">
+    <End Role="TBL_Municipalidad" Type="Self.TBL_Municipalidad" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Municipalidad">
+        <PropertyRef Name="TN_IdMunicipalidad" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdMunicipalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_PrioridadCaso">
+    <End Role="TBL_PrioridadCaso" Type="Self.TBL_PrioridadCaso" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_PrioridadCaso">
+        <PropertyRef Name="TN_IdPrioridadCaso" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdPrioridadCaso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_Producto">
+    <End Role="TBL_Producto" Type="Self.TBL_Producto" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Producto">
+        <PropertyRef Name="TN_IdProducto" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_Usuario">
+    <End Role="TBL_Usuario" Type="Self.TBL_Usuario" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Usuario">
+        <PropertyRef Name="TN_IdUsuario" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Usuario_TBL_Rol">
+    <End Role="TBL_Rol" Type="Self.TBL_Rol" Multiplicity="0..1" />
+    <End Role="TBL_Usuario" Type="Self.TBL_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Rol">
+        <PropertyRef Name="TN_IdRol" />
+      </Principal>
+      <Dependent Role="TBL_Usuario">
+        <PropertyRef Name="TN_IdRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SOPORTEEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBL_Caso" EntityType="Self.TBL_Caso" />
+    <EntitySet Name="TBL_Cliente" EntityType="Self.TBL_Cliente" />
+    <EntitySet Name="TBL_DescripcionCaso" EntityType="Self.TBL_DescripcionCaso" />
+    <EntitySet Name="TBL_EstadoCaso" EntityType="Self.TBL_EstadoCaso" />
+    <EntitySet Name="TBL_Municipalidad" EntityType="Self.TBL_Municipalidad" />
+    <EntitySet Name="TBL_PrioridadCaso" EntityType="Self.TBL_PrioridadCaso" />
+    <EntitySet Name="TBL_Producto" EntityType="Self.TBL_Producto" />
+    <EntitySet Name="TBL_Rol" EntityType="Self.TBL_Rol" />
+    <EntitySet Name="TBL_Usuario" EntityType="Self.TBL_Usuario" />
+    <AssociationSet Name="FK_TBL_Caso_TBL_Cliente" Association="Self.FK_TBL_Caso_TBL_Cliente">
+      <End Role="TBL_Cliente" EntitySet="TBL_Cliente" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_DescripcionCaso" Association="Self.FK_TBL_Caso_TBL_DescripcionCaso">
+      <End Role="TBL_DescripcionCaso" EntitySet="TBL_DescripcionCaso" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_EstadoCaso" Association="Self.FK_TBL_Caso_TBL_EstadoCaso">
+      <End Role="TBL_EstadoCaso" EntitySet="TBL_EstadoCaso" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_Municipalidad" Association="Self.FK_TBL_Caso_TBL_Municipalidad">
+      <End Role="TBL_Municipalidad" EntitySet="TBL_Municipalidad" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_PrioridadCaso" Association="Self.FK_TBL_Caso_TBL_PrioridadCaso">
+      <End Role="TBL_PrioridadCaso" EntitySet="TBL_PrioridadCaso" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_Producto" Association="Self.FK_TBL_Caso_TBL_Producto">
+      <End Role="TBL_Producto" EntitySet="TBL_Producto" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_Usuario" Association="Self.FK_TBL_Caso_TBL_Usuario">
+      <End Role="TBL_Usuario" EntitySet="TBL_Usuario" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Usuario_TBL_Rol" Association="Self.FK_TBL_Usuario_TBL_Rol">
+      <End Role="TBL_Rol" EntitySet="TBL_Rol" />
+      <End Role="TBL_Usuario" EntitySet="TBL_Usuario" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SOPORTEModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SOPORTEModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RegistrarUsuario">
+      <Parameter Name="cedula" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="apellido1" Mode="In" Type="String" />
+      <Parameter Name="apellido2" Mode="In" Type="String" />
+      <Parameter Name="telefono" Mode="In" Type="Int32" />
+      <Parameter Name="correo" Mode="In" Type="String" />
+      <Parameter Name="clave" Mode="In" Type="String" />
+      <Parameter Name="registrado" Mode="InOut" Type="Boolean" />
+      <Parameter Name="mensaje" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="sp_ValidarUsuario" ReturnType="Collection(Int32)">
+      <Parameter Name="Correo" Mode="In" Type="String" />
+      <Parameter Name="Clave" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

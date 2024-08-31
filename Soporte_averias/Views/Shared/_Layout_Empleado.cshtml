@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<link href="~/icons/headset_85862.ico" rel="shortcut icon" type="image/x-icon" />
+	<script src="https://kit.fontawesome.com/3578d96397.js" crossorigin="anonymous"></script>
+	<title>@ViewBag.Title</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+		<div class="container">
+			@Html.ActionLink("Sitec Seguridad", "Index", "Home_Empleado", new { area = "" }, new { @class = "navbar-brand" })
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						@Html.ActionLink("Inicio", "Index", "Home_Empleado", new { area = "" }, new { @class = "nav-link color_menu_nav" })
+					</li>
+					<li class="nav-item">
+						@Html.ActionLink("Sobre nosotros", "About", "Home_Empleado", new { area = "" }, new { @class = "nav-link color_menu_nav" })
+					</li>
+
+					<li class="nav-item">
+						@Html.ActionLink("Casos", "Index", "Caso_Empleado", new { area = "" }, new { @class = "nav-link color_menu_nav" })
+					</li>
+
+					<li class="nav-item">
+						@Html.ActionLink("Estadísticas", "Index", "Estadisticas_Empleado", new { area = "" }, new { @class = "nav-link color_menu_nav" })
+					</li>
+
+					<li class="nav-item">
+						@Html.ActionLink("Documentación", "Index", "Documentacion_Empleado", new { area = "" }, new { @class = "nav-link color_menu_nav" })
+					</li>
+
+					<li class="nav-item">
+						@Html.ActionLink("Contáctenos", "Contact", "Home_Empleado", new { area = "" }, new { @class = "nav-link color_menu_nav" })
+					</li>
+
+
+					<li class="nav-item">
+						@Html.ActionLink("Cerrar sesión", "Cerrar_Sesion", "Home_Empleado", new { area = "" }, new { @class = "nav-link color_menu_nav" })
+					</li>
+
+
+				</ul>
+			</div>
+				
+					
+				</div>
+		
+
+	
+			
+		
+	</nav>
+	<div class="container body-content">
+		@RenderBody()
+		<hr />
+		<footer>
+			<p>&copy; @DateTime.Now.Year - Sitec Seguridad</p>
+		</footer>
+	</div>
+
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+
+	
+
+	@RenderSection("scripts", required: false)
+</body>
+</html>

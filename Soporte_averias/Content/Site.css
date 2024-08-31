@@ -1,0 +1,756 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/* Estilo para el input */
+input[type="date"] {
+    color: white; /* Cambia el color del texto */
+    background-color: dimgray; /* Cambia el color de fondo */
+    
+}
+
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.color_menu_nav {
+color: white;
+
+}
+
+
+body {
+    background-color: lightgray;
+}
+
+.my_navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+    .my_navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+.my_dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+    .my_dropdown .my_dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 8px 8px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .my_navbar a:hover, .my_dropdown:hover .my_dropbtn {
+        background-color: #ff6565;
+        color: black;
+    }
+
+.my_dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .my_dropdown-content a {
+        float: none;
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+        .my_dropdown-content a:hover {
+            background-color: #ff6565;
+            color: black;
+        }
+
+.my_dropdown:hover .my_dropdown-content {
+    display: block;
+}
+
+
+.btn_add {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #117714;
+    box-shadow: 3px 3px 3px #117714;
+    color: ghostwhite;
+}
+    .btn_add:hover {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: #77dd77;
+        box-shadow: 3px 3px 3px #77dd77;
+        color: ghostwhite;
+    }
+
+.btn_edit {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #c06500;
+    color: white;
+    box-shadow: 3px 3px 3px #c06500;
+    margin-bottom: 10px;
+}
+
+    .btn_edit:hover {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: #ff9800;
+        color: white;
+        box-shadow: 3px 3px 3px #ff9800;
+        margin-bottom: 10px;
+    }
+
+.btn-separator {
+margin-right: 12px;
+
+}
+
+.btn_details {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #005187;
+    color: white;
+    box-shadow: 3px 3px 3px #005187;
+    margin-bottom: 10px;
+}
+
+    .btn_details:hover {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: #84b6f4;
+        color: white;
+        box-shadow: 3px 3px 3px #84b6f4;
+        margin-bottom: 10px;
+    }
+
+.btn_back {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #bd0003;
+    box-shadow: 3px 3px 3px #bd0003;
+    color: white;
+}
+
+
+
+
+
+
+    .btn_back:hover {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: #ff0000;
+        box-shadow: 3px 3px 3px #ff0000;
+        color: white;
+    }
+
+.cuadro_tabla {
+    background-color: #9b9b9b;
+    text-align: center;
+
+}
+
+.letra_tabla {
+    color: black;
+
+
+}
+.titulo_encabezado_tabla {
+    background-color: black;
+    text-align: center;
+    font-family: 'Chivo', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+.datos_tabla {
+    background-color: #c5c6c8;
+    color: black;
+    font-family: 'Chivo', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+.datos_paginacion {
+    color: black;
+    background-color: #c5c6c8;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Rubik', sans-serif;
+    border-radius: 5px;
+    margin: 0px 0px 0px 0px;
+    font-weight: bold;
+}
+
+.letra_busqueda {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+
+.btn_search {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #5D0EBA; /* Un tono suave de azul verdoso pastel */
+    box-shadow: 3px 3px 3px #5D0EBA;
+    color: white;
+}
+
+    .btn_search:hover {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: #B55CF6; /* Un tono suave de azul verdoso pastel */
+        box-shadow: 3px 3px 3px #B55CF6;
+        color: white;
+    }
+
+
+
+
+.btn_angle_right {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: black; /* Un tono suave de azul verdoso pastel */
+    box-shadow: 3px 3px 3px black;
+    color: white;
+    
+}
+
+    .btn_angle_right:hover {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: white; /* Un tono suave de azul verdoso pastel */
+        box-shadow: 3px 3px 3px white;
+        color: black;
+    }
+
+
+.btn_home {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: black; /* Un tono suave de azul verdoso pastel */
+    box-shadow: 3px 3px 3px black;
+    color: white;
+}
+
+    .btn_home:hover {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: white; /* Un tono suave de azul verdoso pastel */
+        box-shadow: 3px 3px 3px white;
+        color: black;
+    }
+
+.btn_angle_left {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: black; /* Un tono suave de azul verdoso pastel */
+    box-shadow: 3px 3px 3px black;
+    color: white;
+}
+
+    .btn_angle_left:hover {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: white; /* Un tono suave de azul verdoso pastel */
+        box-shadow: 3px 3px 3px white;
+        color: black;
+    }
+
+.btn_clean {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #6B264B; /* Un tono suave de azul verdoso pastel */
+    box-shadow: 3px 3px 3px #6B264B;
+    color: white;
+}
+
+
+    .btn_clean:hover {
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: #F2827F;
+        box-shadow: 3px 3px 3px #F2827F;
+        color: white;
+    }
+
+.barlow-thin {
+    font-family: "Barlow", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.barlow-extralight {
+    font-family: "Barlow", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.barlow-light {
+    font-family: "Barlow", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.barlow-regular {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.barlow-medium {
+    font-family: "Barlow", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.barlow-semibold {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.barlow-bold {
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.barlow-extrabold {
+    font-family: "Barlow", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.barlow-black {
+    font-family: "Barlow", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.barlow-thin-italic {
+    font-family: "Barlow", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.barlow-extralight-italic {
+    font-family: "Barlow", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.barlow-light-italic {
+    font-family: "Barlow", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.barlow-regular-italic {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.barlow-medium-italic {
+    font-family: "Barlow", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.barlow-semibold-italic {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.barlow-bold-italic {
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.barlow-extrabold-italic {
+    font-family: "Barlow", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.barlow-black-italic {
+    font-family: "Barlow", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.titulo_detalles {
+
+font-family: Helvetica;
+font-weight: bold;
+
+}
+
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+.bg_add_card {
+    background-color: #C5E1A5;
+}
+
+.bg_edit_card {
+    background-color: #FFE5B4;
+}
+.bg_details_card {
+    background-color: #B3E5FC;
+}
+
+.card {
+
+    border: 5px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.titulo_dl {
+    font-family: 'Chivo', sans-serif;
+}
+
+
+.titulo_informacion {
+
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.btn_download_tech {
+    background-color: #830288;
+    color: white;
+}
+
+    .btn_download_tech:hover {
+        background-color: #bc00c4;
+        color: white;
+    }
+
+.btn_download_user {
+    background-color: #420c79;
+    color: white;
+}
+
+    .btn_download_user:hover {
+        background-color: #8732de;
+        color: white;
+    }
+
+
+.btn_PDF {
+    background-color: #B30C00;
+    color: white;
+}
+    .btn_PDF:hover {
+        background-color: #B30C00;
+        color: white;
+    }
+
+    .btn_PDF:active {
+        background-color: #B30C00;
+        color: white;
+    }
+
+.btn_Excel {
+    background-color: #0E6F3A;
+    color: white;
+}
+    .btn_Excel:hover {
+        background-color: #0E6F3A;
+        color: white;
+    }
+    .btn_Excel:active {
+        background-color: #0E6F3A;
+        color: white;
+    }
+
+    .btn_contact {
+        background-color: #4d82bc;
+        color: white;
+    }
+
+    .btn_contact:hover {
+        background-color: #84b6f4;
+        color: white;
+    }
+
+
+.btn_about {
+    background-color: #503459;
+    color: white;
+}
+
+    .btn_about:hover {
+        background-color: #b695c0;
+        color: white;
+    }
+
+.custom-card {
+    background-color: #1c1c1e;
+    border-radius: 8px;
+    padding: 20px;
+    color: #f5f5f5;
+    position: relative;
+}
+
+.custom-card-contact {
+    background-color: darkslategray;
+    border-radius: 8px;
+    padding: 20px;
+    color: #f5f5f5;
+    position: relative;
+}
+
+
+.custom-card-header {
+    font-size: 1.5rem;
+    color: #00aaff;
+    margin-bottom: 10px;
+    border-left: 3px solid;
+    padding-left: 10px;
+    border-image: linear-gradient(to bottom, #00aaff, #9a4eff) 1;
+}
+
+.custom-card {
+    background-color: #1c1c1e;
+    border-radius: 8px;
+    padding: 20px;
+    color: #f5f5f5;
+    position: relative;
+}
+
+.custom-card-header {
+    font-size: 1.5rem;
+    color: #00aaff;
+    margin-bottom: 10px;
+    border-left: 3px solid;
+    padding-left: 10px;
+    border-image: linear-gradient(to bottom, #00aaff, #9a4eff) 1;
+}
+
+.custom-card {
+    background-color: #1c1c1e;
+    border-radius: 8px;
+    padding: 20px;
+    color: #f5f5f5;
+    position: relative;
+}
+
+.custom-card-header {
+    font-size: 1.5rem;
+    color: ghostwhite;
+    margin-bottom: 10px;
+    border-left: 3px solid;
+    padding-left: 10px;
+    border-image: linear-gradient(to bottom, #00aaff, #9a4eff) 1;
+}
+
+.custom-card {
+    background-color: #1c1c1e;
+    border-radius: 8px;
+    padding: 20px;
+    color: #f5f5f5;
+    position: relative;
+}
+
+
+.custom-card-header {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-left: 3px solid;
+    padding-left: 10px;
+    border-image: linear-gradient(to bottom, #00aaff, #9a4eff) 1;
+}
+
+.custom-card-body {
+    font-size: 1rem;
+    color: #d1d1d1;
+}
+
+.custom-card .form-group {
+    margin-bottom: 15px;
+}
+
+    .custom-card .form-group i {
+        margin-right: 5px;
+        color: white;
+    }
+
+.custom-card .form-control {
+    background-color: #2c2c2e;
+    border: 1px solid #3a3a3c;
+    color: #f5f5f5;
+}
+
+    .custom-card .form-control::placeholder {
+        color: #f5f5f5;
+    }
+
+.custom-card .btn-secondary {
+    background-color: #117714;
+    color: white;
+    padding-right:10px;
+    box-shadow:none; /* Remove the button shadow */
+}
+
+    .custom-card .btn-secondary:hover {
+        background-color: #77dd77;
+        box-shadow: none;
+        color:ghostwhite;
+    }
+
+    .custom-card .btn-secondary i {
+        color: white;
+    }
+
+.custom-card .btn_edit {
+    background-color: #c06500;
+    color: white;
+    box-shadow: none;
+    padding-right:8px;
+
+}
+
+    .custom-card .btn_edit:hover {
+        background-color: #ff9800;
+        color: white;
+        box-shadow: none;
+    }
+
+.btn_back .fa-undo {
+    color: white;
+}
+
+.btn_back {
+    color: white;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Invierte los colores del icono */
+}
+

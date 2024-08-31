@@ -1,0 +1,136 @@
+﻿@model Soporte_averias.Models.TBL_Caso
+
+
+@{
+	ViewBag.Title = "Nuevo caso";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="barlow-regular barlow-semibold">@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="custom-card">
+			<h5 class="custom-card-header">
+				Caso
+			</h5>
+			<div class="card-body">
+				<hr />
+				@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+
+				<div class="form-group">
+					<i class="fa-solid fa-city"></i>
+
+					@Html.LabelFor(model => model.TN_IdMunicipalidad, "Municipalidad", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+					<div class="col-md-10">
+						@Html.DropDownList("TN_IdMunicipalidad", null, htmlAttributes: new { @class = "form-control", @required = true })
+						<span class="text-danger">Nota: es importante seleccionar una municipalidad diferente al de 'Seleccione municipalidad' </span>
+						@Html.ValidationMessageFor(model => model.TN_IdMunicipalidad, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+				<div class="form-group">
+					<i class="fa-solid fa-user"></i>
+
+					@Html.LabelFor(model => model.TN_IdUsuario, "Empleado asignado", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+					<div class="col-md-10">
+						@Html.DropDownList("TN_IdUsuario", ViewBag.TN_IdUsuarioList as SelectList, htmlAttributes: new { @class = "form-control", @required = true })
+						<span class="text-danger">Nota: es importante seleccionar un usuario diferente al de 'Seleccione usuario' </span>
+
+						@Html.ValidationMessageFor(model => model.TN_IdUsuario, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<i class="fa-solid fa-circle-user"></i>
+
+					@Html.LabelFor(model => model.TN_IdCliente, "Cliente", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+					<div class="col-md-10">
+						@Html.DropDownList("TN_IdCliente", null, htmlAttributes: new { @class = "form-control", @required = true })
+						<span class="text-danger">Nota: es importante seleccionar un cliente diferente al de 'Seleccione cliente' </span>
+
+						@Html.ValidationMessageFor(model => model.TN_IdCliente, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+				<div class="form-group">
+					<i class="fa-solid fa-boxes-stacked"></i>
+
+					@Html.LabelFor(model => model.TN_IdProducto, "Producto", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+					<div class="col-md-10">
+						@Html.DropDownList("TN_IdProducto", null, htmlAttributes: new { @class = "form-control", @required = true })
+						<span class="text-danger">Nota: es importante seleccionar un producto diferente al de 'Seleccione producto' </span>
+
+						@Html.ValidationMessageFor(model => model.TN_IdProducto, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+				<div class="form-group">
+					<i class="fa-solid fa-note-sticky"></i>
+
+					@Html.LabelFor(model => model.TN_IdDescripcionCaso, "Descripción de caso", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+					<div class="col-md-10">
+						@Html.DropDownList("TN_IdDescripcionCaso", null, htmlAttributes: new { @class = "form-control", @required = true })
+						<span class="text-danger">Nota: es importante seleccionar una descripción diferente al de 'Seleccione descripción' </span>
+						@Html.ValidationMessageFor(model => model.TN_IdDescripcionCaso, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+				<div class="form-group">
+					<i class="fa-solid fa-bell"></i>
+
+					@Html.LabelFor(model => model.TN_IdPrioridadCaso, "Prioridad de caso", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+					<div class="col-md-10">
+						@Html.DropDownList("TN_IdPrioridadCaso", null, htmlAttributes: new { @class = "form-control", @required = true })
+						<span class="text-danger">Nota: es importante seleccionar una prioridad diferente al de 'Seleccione prioridad' </span>
+						@Html.ValidationMessageFor(model => model.TN_IdPrioridadCaso, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+				<div class="form-group">
+					<i class="fa-solid fa-bars-progress"></i>
+
+					@Html.LabelFor(model => model.TN_IdEstadoCaso, "Estado de caso", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+					<div class="col-md-10">
+						@Html.DropDownList("TN_IdEstadoCaso", null, htmlAttributes: new { @class = "form-control", @required = true })
+						<span class="text-danger">Nota: es importante seleccionar un estado diferente al de 'Seleccione estado' </span>
+
+						@Html.ValidationMessageFor(model => model.TN_IdEstadoCaso, "", new { @class = "text-danger" })
+					</div>
+				</div>
+
+
+
+
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-10">
+						<button type="submit" class="btn btn-secondary btn_add">
+							<i class="fa fa-plus"></i>
+
+						</button>
+					</div>
+				</div>
+			</div>
+	</div>
+}
+
+
+
+
+<div>
+	<a class="btn_back btn btn-secondary btn-separator" href="@Url.Action("Index", "Caso")">
+		<i class="fa fa-undo" aria-hidden="true"></i>
+
+
+	</a>
+</div>
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}

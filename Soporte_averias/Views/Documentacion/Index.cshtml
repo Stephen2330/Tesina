@@ -1,0 +1,31 @@
+﻿
+@{
+	ViewBag.Title = "Documentación";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="barlow-regular barlow-semibold">Documentación</h2>
+
+<p class="titulo_informacion"> Se presentan dos botones para descargar la documentación del proyecto. Uno es el manual técnico del sistema por si se decide implementar en algún momento y el otro es el manual de usuario que es de ayuda para quienes utilizan el sistema. Para descargar los manuales, se debe presionar el botón relacionado con el manual que se desee.</p>
+<br />
+<div>
+	<a class="btn_download_tech btn btn-secondary btn-separator" href="@Url.Action("DescargaManualTecnico","Documentacion")">
+		Manual técnico del sistema
+		<i class="fas fa-download"></i>
+	</a>
+	<!---->	
+	<a class="btn_download_user btn btn-secondary btn-separator" href="@Url.Action("DescargaManualUsuario","Documentacion")">
+	Manual de usuario del sistema
+	<i class="fas fa-download"></i>
+</a>
+</div>
+<br />
+
+<div>
+	<a class="btn_back btn btn-secondary btn-separator" href="@Url.Action("Index", "Home")">
+		<i class="fa fa-undo" aria-hidden="true"></i>
+
+
+	</a>
+</div>
+

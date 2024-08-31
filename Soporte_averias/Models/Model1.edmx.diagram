@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6dd79780ae9a44e9812961e3820eced4" Name="Diagram1">
+        <EntityTypeShape EntityType="SOPORTEModel.TBL_Caso" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOPORTEModel.TBL_Cliente" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOPORTEModel.TBL_DescripcionCaso" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOPORTEModel.TBL_EstadoCaso" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOPORTEModel.TBL_Municipalidad" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOPORTEModel.TBL_PrioridadCaso" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOPORTEModel.TBL_Producto" Width="1.5" PointX="3" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOPORTEModel.TBL_Rol" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOPORTEModel.TBL_Usuario" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="SOPORTEModel.FK_TBL_Caso_TBL_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="SOPORTEModel.FK_TBL_Caso_TBL_DescripcionCaso" ManuallyRouted="false" />
+        <AssociationConnector Association="SOPORTEModel.FK_TBL_Caso_TBL_EstadoCaso" ManuallyRouted="false" />
+        <AssociationConnector Association="SOPORTEModel.FK_TBL_Caso_TBL_Municipalidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SOPORTEModel.FK_TBL_Caso_TBL_PrioridadCaso" ManuallyRouted="false" />
+        <AssociationConnector Association="SOPORTEModel.FK_TBL_Caso_TBL_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SOPORTEModel.FK_TBL_Caso_TBL_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="SOPORTEModel.FK_TBL_Usuario_TBL_Rol" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

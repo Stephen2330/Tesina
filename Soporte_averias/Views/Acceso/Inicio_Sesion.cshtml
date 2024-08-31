@@ -1,0 +1,52 @@
+﻿@{
+	Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<link href="~/icons/headset_85862.ico" rel="shortcut icon" type="image/x-icon" />
+
+	<title>Inicio de sesión - Sitec Seguridad</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/login_prueba.css" rel="stylesheet" />
+
+</head>
+<body class="inicio_sesion">
+	<div class="wrapper">
+		<div id="formContent">
+			<div class="card">
+				<!-- Icon -->
+				<div class="fadeIn first">
+					<br />
+					<img src="~/Images/logo-sitec-seguridad.png" />
+					<h1 class="titulo_login">Inicio de sesión</h1>
+				</div>
+
+				<!-- Login Form -->
+				<form action="@Url.Action("Inicio_Sesion", "Acceso")" method="post" name="Login_Form" class="form-horizontal form-signin">
+					<div class="form-group">
+						<label class="label-left">Correo</label>
+						<input type="text" class="form-control fadeIn second input-correo" id="TC_Correo" name="TC_Correo" placeholder="Ingrese correo" required autofocus />
+					</div>
+					<div class="form-group">
+						<label class="label-left">Contraseña</label>
+						<input type="password" class="form-control fadeIn third input-contrasena" id="TC_Clave" name="TC_Clave" placeholder="Ingrese contraseña" required />
+					</div>
+					<button type="submit" class="btn btn_inicio_sesion fadeIn fourth">Iniciar sesión</button>
+
+				</form>
+
+
+
+
+			</div>
+		</div>
+	</div>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿@model Soporte_averias.Models.TBL_PrioridadCaso
+
+@{
+	ViewBag.Title = "Detalles prioridad de caso";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="barlow-regular barlow-semibold">@ViewBag.Title</h2>
+
+<div class="custom-card ">
+	<h5 class="custom-card-header">
+		Prioridad de caso
+	</h5>
+	<div class="card-body">
+
+		<dl class="dl-horizontal titulo_dl">
+			<dt>
+				<i class="fa-solid fa-circle-user"></i>
+
+				Nombre
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TC_Nombre)
+			</dd>
+			<br />
+			<dt>
+				<i class="fa-solid fa-note-sticky"></i>
+
+				Descripción
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.TC_Descripcion)
+			</dd>
+
+		</dl>
+	</div>
+</div>
+<div>
+
+	<a class="btn btn-secondary btn_edit btn-separator" href="@Url.Action("Edit","PrioridadCaso", new { id = Model.TN_IdPrioridadCaso })">
+		<i class="fa-solid fa-pen-to-square"></i>
+	</a>
+
+
+</div>
+<a class="btn btn-secondary btn_back" href="@Url.Action("Index", "PrioridadCaso")">
+	<i class="fa-solid fa-undo" aria-hidden="true"></i>
+</a>

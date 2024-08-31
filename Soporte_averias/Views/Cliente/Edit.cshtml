@@ -1,0 +1,64 @@
+﻿@model Soporte_averias.Models.TBL_Cliente
+
+@{
+	ViewBag.Title = "Editando cliente";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="barlow-regular barlow-semibold">@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+<div class="custom-card ">
+	<h5 class="custom-card-header">
+		Cliente
+	</h5>
+	<div class="card-body">
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		@Html.HiddenFor(model => model.TN_IdCliente)
+
+		<div class="form-group">
+			<i class="fa-solid fa-circle-user"></i>
+			@Html.LabelFor(model => model.TC_Nombre, "Nombre", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_Nombre, new { htmlAttributes = new { @class = "form-control", @placeholder = "Escriba nombre" } })
+				@Html.ValidationMessageFor(model => model.TC_Nombre, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<br />
+		<div class="form-group">
+			<i class="fa-solid fa-note-sticky"></i>
+			@Html.LabelFor(model => model.TC_Descripcion, "Descripción", htmlAttributes: new { @class = "control-label col-md-2 titulo_detalles" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.TC_Descripcion, new { htmlAttributes = new { @class = "form-control ", @placeholder = "Escriba descripción" } })
+				@Html.ValidationMessageFor(model => model.TC_Descripcion, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<button type="submit" class="btn btn-secondary btn_edit">
+					<i class="fa fa-refresh" aria-hidden="true"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+}
+
+<div>
+	<a class="btn_back btn btn-secondary btn-separator" href="@Url.Action("Index", "Cliente")">
+		<i class="fa fa-undo" aria-hidden="true"></i>
+
+
+	</a>
+</div>
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}

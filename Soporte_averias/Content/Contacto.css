@@ -1,0 +1,63 @@
+﻿/* Estilos para la página de contacto */
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.card {
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 30px;
+	max-width: 400px;
+	width: 100%;
+}
+
+h2 {
+	color: #333;
+	margin-bottom: 15px;
+}
+
+h3 {
+	color: #666;
+	margin-bottom: 20px;
+}
+
+.contact-info {
+	border-top: 1px solid #ccc;
+	padding-top: 20px;
+	margin-top: 20px;
+}
+
+.address {
+	margin-bottom: 15px;
+	font-size: 16px;
+	color: #444;
+}
+
+	.address i {
+		margin-right: 5px;
+		font-size: 18px;
+	}
+
+.link-dark {
+	color: #333;
+}
+
+.btn-container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.btn_back i {
+	margin-right: 5px;
+}
+
+.btn_back:hover {
+	background-color: #aaa;
+	color: #fff;
+	text-decoration: none;
+}

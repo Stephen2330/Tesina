@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SOPORTEModelStoreContainer" CdmEntityContainer="SOPORTEEntities3">
+    <EntitySetMapping Name="TBL_Caso">
+      <EntityTypeMapping TypeName="SOPORTEModel.TBL_Caso">
+        <MappingFragment StoreEntitySet="TBL_Caso">
+          <ScalarProperty Name="TN_IdCaso" ColumnName="TN_IdCaso" />
+          <ScalarProperty Name="TN_IdMunicipalidad" ColumnName="TN_IdMunicipalidad" />
+          <ScalarProperty Name="TN_IdCliente" ColumnName="TN_IdCliente" />
+          <ScalarProperty Name="TN_IdProducto" ColumnName="TN_IdProducto" />
+          <ScalarProperty Name="TN_IdDescripcionCaso" ColumnName="TN_IdDescripcionCaso" />
+          <ScalarProperty Name="TN_IdPrioridadCaso" ColumnName="TN_IdPrioridadCaso" />
+          <ScalarProperty Name="TN_IdEstadoCaso" ColumnName="TN_IdEstadoCaso" />
+          <ScalarProperty Name="TN_IdUsuario" ColumnName="TN_IdUsuario" />
+          <ScalarProperty Name="TD_FechaCreacion" ColumnName="TD_FechaCreacion" />
+          <ScalarProperty Name="TD_FechaCierre" ColumnName="TD_FechaCierre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Cliente">
+      <EntityTypeMapping TypeName="SOPORTEModel.TBL_Cliente">
+        <MappingFragment StoreEntitySet="TBL_Cliente">
+          <ScalarProperty Name="TN_IdCliente" ColumnName="TN_IdCliente" />
+          <ScalarProperty Name="TC_Nombre" ColumnName="TC_Nombre" />
+          <ScalarProperty Name="TC_Descripcion" ColumnName="TC_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_DescripcionCaso">
+      <EntityTypeMapping TypeName="SOPORTEModel.TBL_DescripcionCaso">
+        <MappingFragment StoreEntitySet="TBL_DescripcionCaso">
+          <ScalarProperty Name="TN_IdDescripcionCaso" ColumnName="TN_IdDescripcionCaso" />
+          <ScalarProperty Name="TC_Descripcion" ColumnName="TC_Descripcion" />
+          <ScalarProperty Name="TC_Observacion" ColumnName="TC_Observacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_EstadoCaso">
+      <EntityTypeMapping TypeName="SOPORTEModel.TBL_EstadoCaso">
+        <MappingFragment StoreEntitySet="TBL_EstadoCaso">
+          <ScalarProperty Name="TN_IdEstadoCaso" ColumnName="TN_IdEstadoCaso" />
+          <ScalarProperty Name="TC_Nombre" ColumnName="TC_Nombre" />
+          <ScalarProperty Name="TC_Descripcion" ColumnName="TC_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Municipalidad">
+      <EntityTypeMapping TypeName="SOPORTEModel.TBL_Municipalidad">
+        <MappingFragment StoreEntitySet="TBL_Municipalidad">
+          <ScalarProperty Name="TN_IdMunicipalidad" ColumnName="TN_IdMunicipalidad" />
+          <ScalarProperty Name="TC_Nombre" ColumnName="TC_Nombre" />
+          <ScalarProperty Name="TC_Descripcion" ColumnName="TC_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_PrioridadCaso">
+      <EntityTypeMapping TypeName="SOPORTEModel.TBL_PrioridadCaso">
+        <MappingFragment StoreEntitySet="TBL_PrioridadCaso">
+          <ScalarProperty Name="TN_IdPrioridadCaso" ColumnName="TN_IdPrioridadCaso" />
+          <ScalarProperty Name="TC_Nombre" ColumnName="TC_Nombre" />
+          <ScalarProperty Name="TC_Descripcion" ColumnName="TC_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Producto">
+      <EntityTypeMapping TypeName="SOPORTEModel.TBL_Producto">
+        <MappingFragment StoreEntitySet="TBL_Producto">
+          <ScalarProperty Name="TN_Precio_Unitario" ColumnName="TN_Precio_Unitario" />
+          <ScalarProperty Name="TN_Cantidad_Inventario" ColumnName="TN_Cantidad_Inventario" />
+          <ScalarProperty Name="TN_IdProducto" ColumnName="TN_IdProducto" />
+          <ScalarProperty Name="TC_Nombre" ColumnName="TC_Nombre" />
+          <ScalarProperty Name="TC_Descripcion" ColumnName="TC_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Rol">
+      <EntityTypeMapping TypeName="SOPORTEModel.TBL_Rol">
+        <MappingFragment StoreEntitySet="TBL_Rol">
+          <ScalarProperty Name="TN_IdRol" ColumnName="TN_IdRol" />
+          <ScalarProperty Name="TC_Nombre" ColumnName="TC_Nombre" />
+          <ScalarProperty Name="TC_Descripcion" ColumnName="TC_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Usuario">
+      <EntityTypeMapping TypeName="SOPORTEModel.TBL_Usuario">
+        <MappingFragment StoreEntitySet="TBL_Usuario">
+          <ScalarProperty Name="TN_IdUsuario" ColumnName="TN_IdUsuario" />
+          <ScalarProperty Name="TN_IdRol" ColumnName="TN_IdRol" />
+          <ScalarProperty Name="TN_Cedula" ColumnName="TN_Cedula" />
+          <ScalarProperty Name="TC_Nombre" ColumnName="TC_Nombre" />
+          <ScalarProperty Name="TC_PrimerApellido" ColumnName="TC_PrimerApellido" />
+          <ScalarProperty Name="TC_SegundoApellido" ColumnName="TC_SegundoApellido" />
+          <ScalarProperty Name="TC_Correo" ColumnName="TC_Correo" />
+          <ScalarProperty Name="TN_Telefono" ColumnName="TN_Telefono" />
+          <ScalarProperty Name="TC_Clave" ColumnName="TC_Clave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SOPORTEModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SOPORTEModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SOPORTEModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SOPORTEModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SOPORTEModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SOPORTEModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SOPORTEModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_RegistrarUsuario" FunctionName="SOPORTEModel.Store.sp_RegistrarUsuario" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SOPORTEModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SOPORTEModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_ValidarUsuario" FunctionName="SOPORTEModel.Store.sp_ValidarUsuario" />
+  </EntityContainerMapping>
+</Mapping>
